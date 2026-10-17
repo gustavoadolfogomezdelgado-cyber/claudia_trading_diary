@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: claudia-trading-diary
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app
+    envVars:
+      - key: CLAUDIA_API_KEY
+        generateValue: true

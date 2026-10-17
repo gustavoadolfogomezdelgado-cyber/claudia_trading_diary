@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07131f" />
+  <title>Claudia Trading Diary</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="Claudia" class="brand-logo" />
+      <div>
+        <div class="brand-title">CLAUDIA</div>
+        <div class="brand-sub">Trading Diary</div>
+      </div>
+    </div>
+    <button id="settingsBtn" class="icon-btn" aria-label="Configuración">⚙️</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">RESUMEN</div>
+        <h1>Tu rendimiento, sin complicaciones.</h1>
+        <p>Sincronizado con el historial de MT5 para ver resultados diarios, semanales y mensuales.</p>
+      </div>
+      <div class="sync-status" id="syncStatus"><span class="dot"></span> Sin datos sincronizados</div>
+    </section>
+
+    <section class="cards four">
+      <article class="card metric">
+        <span>Hoy</span><strong id="todayPnL">$0.00</strong><small id="todayTrades">0 operaciones</small>
+      </article>
+      <article class="card metric">
+        <span>Esta semana</span><strong id="weekPnL">$0.00</strong><small id="weekTrades">0 operaciones</small>
+      </article>
+      <article class="card metric">
+        <span>Este mes</span><strong id="monthPnL">$0.00</strong><small id="monthTrades">0 operaciones</small>
+      </article>
+      <article class="card metric">
+        <span>Total</span><strong id="totalPnL">$0.00</strong><small id="totalTrades">0 operaciones</small>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head"><h2>Hoy por par</h2><span id="todayDate"></span></div>
+        <div id="pairsToday" class="list empty">Aún no hay operaciones para hoy.</div>
+      </article>
+      <article class="card">
+        <div class="section-head"><h2>Resumen semanal</h2><span id="weekRange"></span></div>
+        <div class="best-worst">
+          <div><small>Par más rentable</small><strong id="bestPair">—</strong><span id="bestPairValue">$0.00</span></div>
+          <div><small>Par menos rentable</small><strong id="worstPair">—</strong><span id="worstPairValue">$0.00</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-head"><h2>Resultado de la semana por par</h2><span>Ganancia neta</span></div>
+      <div id="weeklyPairs" class="table-wrap empty">Sin datos.</div>
+    </section>
+
+    <section class="card">
+      <div class="section-head"><h2>Calendario del mes</h2><span id="monthLabel"></span></div>
+      <div id="calendar" class="calendar"></div>
+    </section>
+
+    <section class="card sync-panel">
+      <div class="section-head"><h2>Sincronización MT5</h2><span>Automática</span></div>
+      <p>El EA de MT5 envía las operaciones cerradas al servidor. Esta app consulta el servidor y actualiza tus resultados.</p>
+      <div class="row">
+        <button id="syncNowBtn" class="primary">Sincronizar ahora</button>
+        <button id="demoBtn" class="secondary">Cargar demo</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="settingsDialog">
+    <form method="dialog" class="dialog-card">
+      <h3>Configuración</h3>
+      <label>URL del servidor
+        <input id="apiUrl" type="url" placeholder="https://tu-servidor.onrender.com" />
+      </label>
+      <label>Clave de sincronización
+        <input id="apiKey" type="password" placeholder="Tu clave privada" />
+      </label>
+      <label>Moneda
+        <select id="currency"><option value="USD">USD</option><option value="BOB">BOB</option><option value="EUR">EUR</option></select>
+      </label>
+      <div class="row end"><button value="cancel" class="secondary">Cancelar</button><button id="saveSettings" value="default" class="primary">Guardar</button></div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
