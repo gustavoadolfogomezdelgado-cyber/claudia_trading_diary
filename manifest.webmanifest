@@ -1,15 +1,20 @@
 {
-  "name":"Claudia Trading Diary",
-  "short_name":"Claudia",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#06111b",
-  "theme_color":"#06111b",
-  "description":"Diario simple de trading sincronizado con MT5",
-  "icons":[
-    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png"},
-    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png"},
-    {"src":"icons/maskable-192.png","sizes":"192x192","type":"image/png","purpose":"maskable"},
-    {"src":"icons/maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  "id": "/",
+  "name": "Claudia Trading Diary",
+  "short_name": "Claudia",
+  "description": "Diario simple de trading sincronizado con MT5",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#06111b",
+  "theme_color": "#06111b",
+  "icons": [
+    {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"/icons/maskable-192.png","sizes":"192x192","type":"image/png","purpose":"maskable"},
+    {"src":"/icons/maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
   ]
 }
